@@ -1,0 +1,8 @@
+setup https://pythonise.com/series/learning-flask/your-first-flask-app
+
+
+
+set  FLASK_APP=app.py
+set FLASK_ENV=development
+
+pip freeze > requirements.txt
