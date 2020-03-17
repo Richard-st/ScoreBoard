@@ -3,3 +3,4 @@ app/__pycache__
 env
 app/app prod.ini
 app/app.ini
+app/app.ini
