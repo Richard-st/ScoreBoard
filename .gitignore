@@ -1,6 +1,5 @@
+app/app_prod.ini
+app/app.ini
 app/config.py
 app/__pycache__
 env
-app/app prod.ini
-app/app.ini
-app/app.ini

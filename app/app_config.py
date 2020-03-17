@@ -4,7 +4,7 @@ from flask_socketio import SocketIO, emit, disconnect
 
 
 appConfig = configparser.ConfigParser()
-appConfig.read('app/app.ini')
+appConfig.read('app/app_prod.ini')
 
 #
 # Globals
