@@ -21,8 +21,11 @@ dealSumaryRunning       = False
 
 
 def getLastMondayTS():
+    #today           = datetime.date.today()
+    #lastMonday      = today - datetime.timedelta(days=today.weekday())
+    #lastMondayTS    = int(time.mktime(lastMonday.timetuple() ) )
     today           = datetime.date.today()
-    lastMonday      = today - datetime.timedelta(days=today.weekday())
+    lastMonday      = today 
     lastMondayTS    = int(time.mktime(lastMonday.timetuple() ) )
     return  str(lastMondayTS * 1000 )
 
@@ -49,7 +52,10 @@ def getDealOwner(ownerId):
             ownerDetails[ownerId]['lastName']=resJson['lastName'].capitalize()
         return ownerDetails[ownerId]
 
-
+def getDealDetails(dealId):
+    response = requests.get( app_config.appConfig['HUBSPOT']['getDealEndPoint'] + str(dealId) + "?hapikey=" + app_config.appConfig['HUBSPOT']['apiKey'])
+    resJson = response.json()
+    return response.json()
 
 def addDealToTables(deal):
     global dealTotalDollar

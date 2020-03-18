@@ -1,6 +1,7 @@
 from app import app, app_config, hubspotDeals
 from flask import Flask, render_template, session, request
 from flask_socketio import SocketIO, emit, disconnect  
+import logging
 
 #
 # Globals
@@ -31,7 +32,7 @@ def initalBrowserConnect():
     # if we dont have the deal table information, refresh. Shol donly be required on server startup
     #
     if not sortedDollarTable:
-        print ('Refreshing Deals' )
+        logging.info ('Refreshing Deals' )
         hubspotDeals.getRecentDeals()
         sortedDollarTable = hubspotDeals.getDealTotalDollar()
         sortedCountTable  = hubspotDeals.getDealTotalCount()
